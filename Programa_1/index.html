@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Palette Extractor</title>
+  <meta name="description" content="Extract a full color palette from any image in 2 seconds. 100% private, no server.">
+  <meta property="og:title" content="Color Palette Extractor">
+  <meta property="og:description" content="Extract beautiful color swatches instantly from your browser.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a href="../index.html" class="back-btn">← Back to GStore</a>
+
+  <div class="container">
+    <header>
+      <h1>Palette Extractor</h1>
+      <p>Drop an image. Get the colors instantly.</p>
+    </header>
+
+    <div class="card glass-card">
+      <div id="dropzone" class="dropzone">
+        <svg viewBox="0 0 24 24" width="48" height="48" fill="var(--muted)">
+          <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM5 19V5h14v14H5zm9-10.5 3.5 4.5h-11L10 16l2.5-3.5h0z"/>
+        </svg>
+        <span>Click or Drag an image here</span>
+        <input type="file" id="file-input" accept="image/*" hidden>
+      </div>
+
+      <div id="loading" class="hidden">
+        <div class="spinner"></div>
+        <span>Extracting pixels...</span>
+      </div>
+
+      <div id="palette-result" class="palette-result hidden">
+        <div class="preview-container">
+          <img id="image-preview" src="" alt="Uploaded image" />
+        </div>
+        
+        <h3>Dominant Colors</h3>
+        <p class="subtitle">Click any color to copy the HEX code</p>
+        
+        <div id="swatch-grid" class="swatch-grid">
+          <!-- Swatches injected via JS -->
+        </div>
+
+        <button id="reset-btn" class="btn outline-btn">Extract another image</button>
+      </div>
+    </div>
+  </div>
+
+  <canvas id="canvas" hidden></canvas>
+
+  <div id="toast" class="toast hidden">Copied to clipboard!</div>
+
+  <footer>
+    Made with <span style="color:var(--accent2)">♥</span> by <a href="https://linkedin.com/in/gonza" target="_blank">Gonzalo</a><br>
+    Works 100% offline. No servers, no tracking, pure pixels.
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Gradient Generator</title>
+  <meta name="description" content="Generate beautiful CSS gradients visually and copy the code. Natively offline.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="app-body">
+  <div class="container">
+    <div class="card glass-card">
+      <header>
+        <h1>CSS Gradient</h1>
+        <p>Design your aesthetic visually</p>
+      </header>
+
+      <div class="controls">
+        <div class="color-controls">
+          <div class="color-picker-wrapper" title="Color 1">
+            <input type="color" id="color1" value="#6c63ff">
+            <div class="color-display" id="display1">#6C63FF</div>
+          </div>
+          <button id="swap-btn" class="btn icon-btn" title="Swap Colors">
+            <svg viewBox="0 0 24 24" width="24" height="24">
+              <path d="M16 17.01V10h-2v7.01h-3L15 21l4-3.99h-3zM9 3L5 6.99h3V14h2V6.99h3L9 3z"/>
+            </svg>
+          </button>
+          <div class="color-picker-wrapper" title="Color 2">
+            <input type="color" id="color2" value="#a78bfa">
+            <div class="color-display" id="display2">#A78BFA</div>
+          </div>
+        </div>
+
+        <div class="angle-controls">
+          <label for="angle-slider">Angle: <span id="angle-value">135°</span></label>
+          <input type="range" id="angle-slider" min="0" max="360" value="135">
+        </div>
+      </div>
+
+      <div class="code-section">
+        <p class="subtitle">Generated CSS</p>
+        <div class="code-box">
+          <code id="css-output">background: linear-gradient(135deg, #6c63ff, #a78bfa);</code>
+        </div>
+        <button id="copy-btn" class="btn primary-btn">
+          Copy CSS
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden">Copied to clipboard!</div>
+
+  <footer>
+    Made with <span>♥</span> by <a href="https://linkedin.com/in/gonza" target="_blank">Gonzalo</a><br>
+    Works 100% offline. No servers, pure frontend.
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

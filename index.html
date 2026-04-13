@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gonzalo's App Hub</title>
+  <meta name="description"
+    content="Mini Play Store containing all 6 web applications built locally with zero external dependencies.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <header class="hub-header">
+    <div class="logo">
+      <h1>GStore</h1>
+      <p>Discover & vote for your favorite native web apps</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="catalog-controls">
+      <h2>🏆 Top Ranking Apps</h2>
+      <span class="muted-text">Sorted dynamically by community upvotes</span>
+    </div>
+
+    <!-- App grid dynamically injected here -->
+    <div id="app-grid" class="app-grid"></div>
+  </main>
+
+  <footer>
+    Made with <span>♥</span> by <a href="https://linkedin.com/in/gonza" target="_blank">Gonzalo</a><br>
+    Zero-server Play Store built with LocalStorage.
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Markdown Live Previewer</title>
+  <meta name="description" content="Write and preview Markdown instantly in your browser without installing anything.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <!-- marked.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a href="../index.html" class="back-btn">← Back to GStore</a>
+
+  <header class="app-header">
+    <div class="logo">
+      <h1>MD Preview</h1>
+      <p>Live Markdown Editor</p>
+    </div>
+    <div class="header-actions">
+      <button id="copy-markdown-btn" class="btn outline-btn" title="Copy Raw Markdown">
+        Copy .MD
+      </button>
+      <button id="copy-html-btn" class="btn primary-btn" title="Copy Parsed HTML">
+        Copy HTML
+      </button>
+    </div>
+  </header>
+
+  <div class="split-layout container">
+    <div class="card editor-card">
+      <div class="card-header">
+        <span class="label">INPUT</span>
+      </div>
+      <textarea id="markdown-input" spellcheck="false" placeholder="Write markdown here..."></textarea>
+    </div>
+
+    <div class="card preview-card">
+      <div class="card-header">
+        <span class="label">OUTPUT</span>
+      </div>
+      <div id="html-preview" class="markdown-body">
+        <!-- Rendered markdown injected here -->
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden">Copied to clipboard!</div>
+
+  <footer>
+    Made with <span>♥</span> by <a href="https://linkedin.com/in/gonza" target="_blank">Gonzalo</a><br>
+    Works offline via cached CDN. Zero tracking, zero ads.
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

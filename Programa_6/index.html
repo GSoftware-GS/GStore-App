@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pomodoro Focus Timer</title>
+  <meta name="description" content="A beautiful, browser-based Pomodoro productivity hub. Timer, Tasks, and Analytics.">
+  <meta property="og:title" content="Pomodoro Focus Timer">
+  <meta property="og:description" content="A beautiful, browser-based Pomodoro productivity hub. Timer, Tasks, and Analytics.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a href="../index.html" class="back-btn">← Back to GStore</a>
+
+  <div class="container">
+    <header>
+      <h1>PomoFocus</h1>
+      <p id="mode-text">Work Session</p>
+      <div id="session-tracker" class="session-badge" title="Completed Work Sessions Today">
+        0 🍅
+      </div>
+    </header>
+
+    <div class="card">
+      <div class="timer-display">
+        <svg class="progress-ring" width="280" height="280">
+          <circle class="progress-ring__circle-bg" stroke="rgba(255,255,255,0.1)" stroke-width="12" fill="transparent" r="130" cx="140" cy="140"/>
+          <circle class="progress-ring__circle" stroke="url(#gradient)" stroke-width="12" fill="transparent" r="130" cx="140" cy="140"/>
+          <defs>
+            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#6c63ff" />
+              <stop offset="100%" stop-color="#a78bfa" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="time-text" id="time">25:00</div>
+      </div>
+
+      <div class="controls">
+        <button class="btn icon-btn" id="start-btn" title="Start">
+          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </button>
+        <button class="btn icon-btn hidden" id="pause-btn" title="Pause">
+          <svg viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+        </button>
+        <button class="btn icon-btn btn-secondary" id="reset-btn" title="Reset">
+          <svg viewBox="0 0 24 24"><path d="M12 5V1L7 6l5 5V7c3.31 0 6 2.69 6 6s-2.69 6-6 6-6-2.69-6-6H4c0 4.42 3.58 8 8 8s8-3.58 8-8-3.58-8-8-8z"/></svg>
+        </button>
+      </div>
+
+      <div class="mode-toggles">
+        <button class="mode-btn active" data-mode="work">Work (25m)</button>
+        <button class="mode-btn" data-mode="shortBreak" disabled title="Complete 1 🍅 to unlock">Break (5m)</button>
+        <button class="mode-btn" data-mode="longBreak" disabled title="Complete 4 🍅 to unlock">Long Break (15m)</button>
+      </div>
+
+      <div class="pomodoro-info">
+        💡 Earn a 🍅 for every complete focus session. 4 🍅 unlocks a Long Break!
+      </div>
+      
+      <div class="tasks-section">
+        <h3>Tasks</h3>
+        <form class="task-input-container" id="task-form">
+          <input type="text" id="new-task-input" placeholder="What will you focus on?" required>
+          <button type="submit" id="add-task-btn" title="Add task">
+            <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+          </button>
+        </form>
+        <ul id="tasks-list" class="tasks-list">
+          <!-- Tasks injected via JS -->
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <footer>
+    Made with <span style="color:var(--accent2)">♥</span> by <a href="https://linkedin.com/in/gonza" target="_blank">Gonzalo</a><br>
+    Works 100% offline. Progress is auto-saved safely to your browser.
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

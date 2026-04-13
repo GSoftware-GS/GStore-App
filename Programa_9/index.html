@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offline AI Text Extractor</title>
+  <meta name="description" content="Extract text from any image offline using local AI neural networks.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tesseract.js Native AI Browser Engine (v5) -->
+  <script src="https://unpkg.com/tesseract.js@5.1.0/dist/tesseract.min.js"></script>
+  
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Global Hub Back Button -->
+  <a href="../index.html" class="back-btn">← Back to GStore</a>
+
+  <header class="app-header">
+    <div class="logo">
+      <h1>AI Vision Extractor</h1>
+      <p>Transform Image to Text instantly without losing privacy.</p>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="card glass-card">
+      
+      <!-- Input Zone -->
+      <div id="dropzone" class="dropzone">
+        <svg viewBox="0 0 24 24" width="50" height="50" fill="var(--muted)">
+          <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-5.04-6.71l-2.75 3.54-1.96-2.36L6.5 17h11l-3.54-4.71z"/>
+        </svg>
+        <h3>Drop Image or Hit Ctrl+V</h3>
+        <span>Supports JPG, PNG, WEBP</span>
+        <p class="dropzone-hint">💡 <b>Pro Tip:</b> Use clear screenshots of documents, slides, or emails. Heavy graphics or abstract fonts might confuse the Neural Engine.</p>
+        <input type="file" id="file-input" accept="image/*" hidden>
+      </div>
+
+      <!-- Processing Visuals & Output (Hidden initially) -->
+      <div id="ai-interface" class="ai-interface hidden">
+        <div class="preview-panel">
+          <div class="image-wrapper">
+             <img id="image-preview" src="" alt="scanned">
+          </div>
+          
+          <div class="ai-status">
+             <h4 id="status-text">Waking up Neural Network...</h4>
+             <div class="progress-bar">
+               <div id="progress-fill" class="progress-fill"></div>
+             </div>
+          </div>
+        </div>
+
+        <div class="output-panel">
+          <textarea id="text-output" placeholder="AI extracted text will appear here..." spellcheck="false" readonly></textarea>
+          <div class="actions">
+            <button id="clear-btn" class="btn outline-btn hidden">Clear</button>
+            <button id="copy-btn" class="btn primary-btn hidden">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/></svg> 
+                Copy Text
+            </button>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden">Copied to clipboard!</div>
+
+  <footer>
+    Made with <span>♥</span> by <a href="https://linkedin.com/in/gonza" target="_blank">Gonzalo</a><br>
+    Powered by <strong>Tesseract.js WebAssembly</strong>. Your images strictly stay in your browser.
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

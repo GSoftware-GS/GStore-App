@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Private JSON Formatter</title>
+  <meta name="description" content="Parse and format private JSON offline. Zero external servers.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a href="../index.html" class="back-btn">← Back to GStore</a>
+
+  <header class="app-header">
+    <div class="logo">
+      <h1>JSON Formatter</h1>
+      <p>Secure. Offline. Native.</p>
+    </div>
+    <div class="header-actions">
+      <button id="minify-btn" class="btn outline-btn" title="Minify JSON">
+        Minify
+      </button>
+      <button id="copy-btn" class="btn primary-btn" title="Copy Formatted Output">
+        Copy Output
+      </button>
+    </div>
+  </header>
+
+  <div id="error-badge" class="error-badge hidden">
+    <!-- Error text goes here -->
+  </div>
+
+  <div class="split-layout container">
+    <div class="card editor-card">
+      <div class="card-header">
+        <span class="label">UGLY JSON (PASTE HERE)</span>
+      </div>
+      <textarea id="json-input" spellcheck="false" placeholder='{ "paste": "your", "json": "here" }'></textarea>
+    </div>
+
+    <div class="card preview-card">
+      <div class="card-header">
+        <span class="label">BEAUTIFUL JSON (LIVE)</span>
+      </div>
+      <div class="output-container">
+        <pre><code id="json-output"></code></pre>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden">Copied to clipboard!</div>
+
+  <footer>
+    Made with <span>♥</span> by <a href="https://linkedin.com/in/gonza" target="_blank">Gonzalo</a><br>
+    Works 100% offline via native <code>JSON.parse</code>.
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

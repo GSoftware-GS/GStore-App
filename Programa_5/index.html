@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Generator — Unbreakable passwords locally</title>
+  <meta name="description" content="Generate unbreakable passwords directly in your browser without trusting any server. Fast, free, and secure.">
+  <meta property="og:title" content="Secure Password Generator">
+  <meta property="og:description" content="Generate unbreakable passwords directly in your browser without trusting any server. Fast, free, and secure.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a href="../index.html" class="back-btn">← Back to GStore</a>
+
+  <div class="container">
+    <header>
+      <h1>PasswordGen</h1>
+      <p>100% unbreakable, 100% in your browser.</p>
+    </header>
+
+    <div class="card">
+      <div class="password-display">
+        <span id="result">P@ssw0rd!</span>
+        <button class="copy-btn" id="copyBtn" title="Copy to clipboard">
+          <svg viewBox="0 0 24 24">
+            <path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="setting">
+        <div class="setting-header">
+          <label for="length">Password Length</label>
+          <span class="length-val" id="lengthVal">16</span>
+        </div>
+        <input type="range" id="length" min="8" max="64" value="16">
+      </div>
+
+      <div class="options">
+        <label class="option">
+          <input type="checkbox" id="uppercase" checked> Includes Uppercase
+        </label>
+        <label class="option">
+          <input type="checkbox" id="lowercase" checked> Includes Lowercase
+        </label>
+        <label class="option">
+          <input type="checkbox" id="numbers" checked> Includes Numbers
+        </label>
+        <label class="option">
+          <input type="checkbox" id="symbols" checked> Includes Symbols
+        </label>
+      </div>
+
+      <button class="generate-btn" id="generateBtn">Generate</button>
+    </div>
+  </div>
+
+  <footer>
+    Made with <span style="color:var(--accent2)">♥</span> by <a href="https://linkedin.com/in/gonza" target="_blank">Gonzalo</a>
+  </footer>
+
+  <div class="toast" id="toast">Copied to clipboard!</div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
