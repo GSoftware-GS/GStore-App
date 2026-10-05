@@ -21,15 +21,15 @@ const STORE_KEY = 'portfolio_hub_votes_v1';
 const IS_FIREBASE_READY = firebaseConfig.apiKey !== "ACA_TU_API_KEY";
 
 const appCatalog = [
-  { id: 'prog1', name: 'Color Palette Extractor', desc: 'Extract a full color palette from any image purely in your browser in seconds.', icon: '🎨', folder: 'Programa_1/index.html' },
-  { id: 'prog2', name: 'CSS Gradient Generator', desc: 'Generate CSS gradients visually from an immersive background and copy the clean code.', icon: '🌈', folder: 'Programa_2/index.html' },
-  { id: 'prog3', name: 'Markdown Live Previewer', desc: 'Write and preview GitHub-styled HTML Markdown instantly right in your browser.', icon: '📝', folder: 'Programa_3/index.html' },
-  { id: 'prog4', name: 'QR Code Generator', desc: 'Generate customized QR codes completely locally with zero external network tracking.', icon: '📱', folder: 'Programa_4/index.html' },
-  { id: 'prog5', name: 'Vault Password Gen', desc: 'Generate unbreakable passwords dynamically using native offline crypto logic.', icon: '🔐', folder: 'Programa_5/index.html' },
-  { id: 'prog6', name: 'Pomodoro Prod Hub', desc: 'A gorgeous focus timer equipped with native tasks and daily session tracking.', icon: '🍅', folder: 'Programa_6/index.html' },
-  { id: 'prog7', name: 'Private JSON Formatter', desc: 'Stop pasting your private JSON online. Format and validate data 100% securely offline.', icon: '🖧', folder: 'Programa_7/index.html' },
-  { id: 'prog8', name: 'Offline PDF Editor', desc: 'Privacy-first editor. Edit document metadata and stamp permanent watermarks 100% locally.', icon: '📄', folder: 'Programa_8/index.html' },
-  { id: 'prog9', name: 'AI Vision Extractor', desc: 'Extract clean text natively from any image or screenshot using an offline neural network.', icon: '👁️', folder: 'Programa_9/index.html' }
+  { id: 'prog1', name: 'Color Palette Extractor', desc: 'Extract a full color palette from any image purely in your browser in seconds.', icon: '🎨', folder: 'palette-extractor/index.html' },
+  { id: 'prog2', name: 'CSS Gradient Generator', desc: 'Generate CSS gradients visually from an immersive background and copy the clean code.', icon: '🌈', folder: 'gradient-generator/index.html' },
+  { id: 'prog3', name: 'Markdown Live Previewer', desc: 'Write and preview GitHub-styled HTML Markdown instantly right in your browser.', icon: '📝', folder: 'markdown-previewer/index.html' },
+  { id: 'prog4', name: 'QR Code Generator', desc: 'Generate customized QR codes completely locally with zero external network tracking.', icon: '📱', folder: 'qr-generator/index.html' },
+  { id: 'prog5', name: 'Vault Password Gen', desc: 'Generate unbreakable passwords dynamically using native offline crypto logic.', icon: '🔐', folder: 'password-generator/index.html' },
+  { id: 'prog6', name: 'Pomodoro Prod Hub', desc: 'A gorgeous focus timer equipped with native tasks and daily session tracking.', icon: '🍅', folder: 'pomodoro-timer/index.html' },
+  { id: 'prog7', name: 'Private JSON Formatter', desc: 'Stop pasting your private JSON online. Format and validate data 100% securely offline.', icon: '🖧', folder: 'json-formatter/index.html' },
+  { id: 'prog8', name: 'Offline PDF Editor', desc: 'Privacy-first editor. Edit document metadata and stamp permanent watermarks 100% locally.', icon: '📄', folder: 'pdf-editor/index.html' },
+  { id: 'prog9', name: 'AI Vision Extractor', desc: 'Extract clean text natively from any image or screenshot using an offline neural network.', icon: '👁️', folder: 'image-text-extractor/index.html' }
 ];
 
 let localVotes = {};

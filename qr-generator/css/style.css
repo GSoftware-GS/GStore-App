@@ -1,0 +1,358 @@
+/* =============================================
+   QR Code Generator – style.css
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* ── Reset & Custom Properties ─────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg:       #0a0a14;
+  --surface:  rgba(255, 255, 255, 0.05);
+  --border:   rgba(255, 255, 255, 0.10);
+  --accent:   #6c63ff;
+  --accent2:  #a78bfa;
+  --text:     #f1f0ff;
+  --muted:    #8b8aa8;
+  --radius:   18px;
+}
+
+/* ── Base ───────────────────────────────────── */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse at 20% 0%,   rgba(108, 99, 255, 0.25) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 100%, rgba(167, 139, 250, 0.20) 0%, transparent 55%);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem 4rem;
+}
+
+/* ── Header ─────────────────────────────────── */
+header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+  animation: fadeDown 0.6s ease both;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: rgba(108, 99, 255, 0.15);
+  border: 1px solid rgba(108, 99, 255, 0.35);
+  color: var(--accent2);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.9rem;
+  border-radius: 100px;
+  margin-bottom: 1.1rem;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.15;
+  background: linear-gradient(135deg, #fff 30%, var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 0.6rem;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+/* ── Card ───────────────────────────────────── */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 2rem;
+  width: 100%;
+  max-width: 520px;
+  animation: fadeUp 0.65s ease both;
+}
+
+/* ── Form Fields ────────────────────────────── */
+.field {
+  margin-bottom: 1.4rem;
+}
+
+label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+input[type="url"],
+textarea {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 0.75rem 1rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="url"]:focus,
+textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.2);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+/* ── Color Pickers ──────────────────────────── */
+.color-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.color-field {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.6rem 1rem;
+  transition: border-color 0.2s;
+}
+
+.color-field:focus-within {
+  border-color: var(--accent);
+}
+
+input[type="color"] {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  border-radius: 6px;
+  padding: 0;
+}
+
+.color-label {
+  font-size: 0.88rem;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* ── Size Slider ────────────────────────────── */
+.slider-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+input[type="range"] {
+  flex: 1;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.slider-val {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--accent2);
+  min-width: 44px;
+  text-align: right;
+}
+
+/* ── Generate Button ────────────────────────── */
+.btn-generate {
+  width: 100%;
+  padding: 0.9rem;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: #fff;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+  box-shadow: 0 4px 24px rgba(108, 99, 255, 0.4);
+  transition: opacity 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+
+.btn-generate:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 30px rgba(108, 99, 255, 0.5);
+}
+
+.btn-generate:active {
+  transform: translateY(0);
+}
+
+/* ── Preview Section ────────────────────────── */
+.preview-section {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  animation: fadeUp 0.5s ease both;
+}
+
+.preview-section.visible {
+  display: flex;
+}
+
+.qr-wrapper {
+  background: #fff;
+  border-radius: 14px;
+  padding: 18px;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
+}
+
+.qr-label {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #222;
+  font-family: 'Inter', sans-serif;
+  max-width: 220px;
+  word-break: break-word;
+}
+
+/* ── Action Buttons ─────────────────────────── */
+.actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.4rem;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.15s, opacity 0.2s;
+  border: none;
+}
+
+.btn-action:hover {
+  transform: translateY(-1px);
+  opacity: 0.88;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--accent2);
+  border: 2px solid var(--accent2);
+}
+
+/* ── Footer ─────────────────────────────────── */
+footer {
+  margin-top: 3rem;
+  color: var(--muted);
+  font-size: 0.82rem;
+  text-align: center;
+  animation: fadeUp 0.8s ease both;
+}
+
+footer a {
+  color: var(--accent2);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* ── Animations ─────────────────────────────── */
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes qrPulse {
+  0%   { transform: scale(0.93); opacity: 0.4; }
+  60%  { transform: scale(1.03); }
+  100% { transform: scale(1);    opacity: 1; }
+}
+
+.qr-wrapper.pulse {
+  animation: qrPulse 0.4s ease;
+}
+
+/* ── Responsive ─────────────────────────────── */
+@media (max-width: 480px) {
+  .color-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Back link to the GStore hub */
+.back-btn {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #a78bfa;
+  padding: 8px 16px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+}
+.back-btn:hover {
+  background: rgba(167, 139, 250, 0.15);
+  transform: translateY(-2px);
+}

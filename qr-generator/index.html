@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QR Code Generator — Free, Private, Instant</title>
+  <meta name="description" content="Generate QR codes instantly in your browser. No uploads, no tracking, no ads. Customize colors and download as PNG for free." />
+  <meta property="og:title"       content="QR Code Generator — Free, Private, Instant" />
+  <meta property="og:description" content="Generate and download QR codes in seconds. 100% client-side, zero data sent to any server." />
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script>
+</head>
+<body>
+  <a href="../index.html" class="back-btn">← Back to GStore</a>
+
+  <!-- ── Header ─────────────────────────────── -->
+  <header>
+    <div class="badge">⚡ 100% In-Browser · No Uploads · No Tracking</div>
+    <h1>QR Code Generator</h1>
+    <p class="subtitle">Free forever. Nothing leaves your device.</p>
+  </header>
+
+  <!-- ── Form Card ──────────────────────────── -->
+  <div class="card">
+
+    <div class="field">
+      <label for="qr-text">URL or Text</label>
+      <textarea id="qr-text" placeholder="https://linkedin.com/in/yourprofile  or any text…"></textarea>
+    </div>
+
+    <div class="field">
+      <label>Colors</label>
+      <div class="color-row">
+        <div class="color-field">
+          <input type="color" id="color-dark"  value="#1a1a2e" title="Foreground color" />
+          <span class="color-label">Foreground</span>
+        </div>
+        <div class="color-field">
+          <input type="color" id="color-light" value="#ffffff" title="Background color" />
+          <span class="color-label">Background</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="qr-size">
+        Size — <span class="slider-val" id="size-display">240px</span>
+      </label>
+      <div class="slider-row">
+        <input type="range" id="qr-size" min="128" max="400" step="16" value="240" />
+      </div>
+    </div>
+
+    <div class="field">
+      <label for="qr-label">Label <span style="font-weight:400;text-transform:none">(optional)</span></label>
+      <input type="text" id="qr-label" placeholder="e.g. Scan to visit my LinkedIn" maxlength="60" />
+    </div>
+
+    <button class="btn-generate" onclick="generateQR()">
+      ✦ Generate QR Code
+    </button>
+
+  </div>
+
+  <!-- ── Preview ────────────────────────────── -->
+  <div class="preview-section" id="preview">
+
+    <div class="qr-wrapper" id="qr-wrapper">
+      <div id="qr-canvas"></div>
+      <p class="qr-label" id="qr-label-display"></p>
+    </div>
+
+    <div class="actions">
+      <button class="btn-action btn-primary" onclick="downloadPNG()">
+        ⬇ Download PNG
+      </button>
+      <button class="btn-action btn-outline" id="btn-copy" onclick="copyText()">
+        ⎘ Copy Text
+      </button>
+    </div>
+
+  </div>
+
+  <!-- ── Footer ─────────────────────────────── -->
+  <footer>
+    Built with ❤️ by
+    <a href="https://linkedin.com/in/gs-webdesigner/" target="_blank" rel="noopener">Gonzalo Sanchez</a>
+    · Zero dependencies on a server · Open source spirit
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
